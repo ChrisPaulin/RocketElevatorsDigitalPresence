@@ -27,13 +27,58 @@ function showDiv(select){
         document.getElementById('3').style.display = "none";
         document.getElementById('4').style.display = "none";
         }
+   
+       
 
 
-     //function double checked button unit price elevator and fees installation   
-    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//function double checked button unit price elevator and fees installation 
     function CheckedButton( num){
      var btnradio = document.getElementById('p'+num);
          btnradio = document.getElementById('i'+num);
      btnradio.checked = btnradio.checked;
- }
+ };

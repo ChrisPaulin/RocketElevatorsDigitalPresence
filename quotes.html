@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Smarty - Multipurpose + Admin</title>
+		<title>www.rocketelevators.club</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -47,7 +47,7 @@
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
 	<body class="smoothscroll enable-animation">
-
+		
 		<!-- wrapper -->
 		<div id="wrapper">
 
@@ -116,22 +116,22 @@
 										</a>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="#services">
+										<a href="/index.html">
 											SERVICES
 										</a>
 									</li>
 									<li><!-- WORK -->
-										<a href="#work">
-											PORTOFOLIO
+										<a href="/index.html">
+											PROJECTS
 										</a>
 									</li>
 									<li><!-- NEWS -->
-										<a href="#news">
+										<a href="/index.html">
 											NEWS
 										</a>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="#clients">
+										<a href="/index.html">
 											CLIENTS
 										</a>
 									</li>
@@ -163,9 +163,9 @@
 							<p class="lead font-lato fs-30 wow fadeInUp" data-wow-delay="0.7s"></p>
 							
 							<div class="mt-30">
-								<a href="#" class="btn-lg btn-blue"><i class="glyphicon glyphicon-th-large"></i>ANSWERS</a>
+								<a href="#contact" class="btn-lg btn-blue"><i class="glyphicon glyphicon-th-large"></i>CONTACT US</a>
 								<span class="fs-17 hidden-xs-down">&nbsp; OR &nbsp;</span>
-								<a href="#" class="btn-lg btn-blue"><i class="glyphicon glyphicon-user"></i>GET A QUOTE</a>
+								<a href="/quotes.html" class="btn-lg btn-blue"><i class="glyphicon glyphicon-user"></i>GET A QUOTE</a>
 							</div>
 
 						</div>
@@ -174,7 +174,7 @@
 				</div>
 			</section>
 
-            <!-- QUOTES SUBMISSION -->
+            <!-- QUOTES FORM SUBMISSION -->
 
             
             <section id="submission">
@@ -189,9 +189,9 @@
 				</div>
 			</section>
                 
-            <div>
-                <label for="type of building">TYPE OF BUILDING</label>
-                <select id="value" name="form-select" onchange="showDiv(this)" >
+            <div class="col-md-4">
+                <label for="building-type-select">BUILDING TYPE </label>
+                <select id="building-type-select" class="form-select"  onchange="showDiv(this)" >
                     <option value="">-- Select --</option>
                     <option value="1">RESIDENTIAL</option>
                     <option value="2">COMMERCIAL</option>
@@ -203,175 +203,199 @@
                         
             
                     
-            <form action="php/contact.php" method="post" enctype="multipart/form-data" id="quoteform">
-                <div id="1" style="display:none;">
-                <div>
-                      <input type="hidden" name="action" />
-                      <div><label for="type of building">RESIDENTIAL</label></div>
-                       <div class="row" > 
-                            <div class="col-md-4"> 
-                                <label for="residential">Number of appartements</label>
-                                <input type="number" min="0" value="0" class="form-control" id='residentialNumberOfAppartement' >
-                            </div>
-                            <div class="col-md-4">
-                                <label for="residential">Number of floors</label>
-                                <input type="number" min="0" value="0" class="form-control" id="residentialNumberOfFloors" >
-                            </div>
-                            <div class="col-md-4">
-                                <label for="residential">Number of basements</label>
-                                <input type="number" min="0" value="0"  class="form-control" id="residentialNumberOfBasements" >
-                            </div>
-                            
-                    </div>
-                </div>
-            </div>
+            <form id="quoteform" action="php/contact.php" method="post" enctype="multipart/form-data" name="quoteform" >
                 
-            <div id="2" style="display:none;">
-                    <div>
-                            <input type="hidden" name="action" value="2" />
-                            <div><label for="type of building">COMMERCIAL</label></div>
-                            <div class="row">
-                                    <div class="col-md-4"> 
-                                        <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
-                                        <input type="number" min="0" value="0" Name="C1" class="form-control" id="commercialdistinctbusiness">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
-                                        <input type="number" min="0" value="0" Name="C2" class="form-control" id="commercialfloorscontainednobasement">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="NumberOfBasements">Number of basements</label>
-                                        <input type="number" min="0" value="0" Name="C3"  class="form-control" id="commercialbasements" >
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                        <input type="number" min="0" value="0" Name="C4"  class="form-control" id="commercialparking" >
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="NumberOfElevatorCages">Number of elevator cages to be deployed</label>
-                                        <input type="number" min="0" value="0" Name="C5"  class="form-control" id="commercialelevatorcagetobedeployed">
-                                    </div>
-									
-                                  
+						<div id="1" style="display:none;">
+							<div>	
+								<input type="hidden" name="action" value="1" />
+								<label for="type of building">RESIDENTIAL</label>
+							</div>
+
+							<div> 
+								<label for="NumberOfAppartements">Number of appartements</label>
+								<input type="number" min="0" value="0" class="form-control" id='NumberOfAppartementsR1-input' >
+                            </div>
+
+                            <div>
+                                <label for="NumberofFloors">Number of floors</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberofFloorsR2-input" >
+                            </div>
+
+                        	<div>
+								<label for="NumberOfBasements">Number of basements</label>
+								<input  type="number" min="0" value="0"  class="form-control" id="NumberOfBasementsR3-input" >
+                            </div>
+						</div>
+						
+    					<div id="2" style="display:none;">
+                    		<div>
+                            	<input type="hidden" name="action" value="2" />
+                            	<label for="type of building">COMMERCIAL</label>
+                            </div>
+
+                            <div class="col-md-4"> 
+                                <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfDistinctBusinessesC1-input">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfFloorContainedNoBasementsC2-input">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfBasements">Number of basements</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfBasementsC3-input" >
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfParkingSpaceAvailableC4-input" >
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfElevatorCages">Number of elevator cages to be deployed</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfElevatorCagesC5-input">
+                            </div>
+						</div>
+                    
+               			<div id="3" style="display:none;">
+                         	<div>      
+                            	<input type="hidden" name="action" value="3" />
+                                <label for="type of building">CORPORATE</label>
+                            </div>        
+                                
+							<div class="col-md-4"> 
+                                <label for="NumberOfSeparateTenantCompanies">Number of separate tenant companies</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfSeparateTenantCompaniesCOR1-input">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfSeparateTenantCompaniesCOR2-input" >
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="NumberOfBasements">Number of basements</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfBasementsCOR3-input" >
+                            </div>
+
+                            <div class="col-md-4" >
+                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfParkingSpaceAvailableCOR4-input">
+                            </div>
+                            <div class="col-md-4" >
+                                <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="MaximumNumberOfOccupantsPerFloorCOR5-input">
                             </div>
                         </div>
-                    </div>    
-                     
-                    <div id="3" style="display:none;">
-                         <div>      
-                            <input type="hidden" name="action" value="3" />
-                                    <div><label for="type of building">CORPORATE</label></div>
-                                    <div class="row">
-                                            <div class="col-md-4"> 
-                                                <label for="NumberOfSeparateTenantCompanies">Number of separate tenant companies</label>
-                                                <input type="number" min="0" value="0" class="form-control" >
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
-                                                <input type="number" min="0" value="0" class="form-control" >
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="NumberOfBasements">Number of basements</label>
-                                                <input type="number" min="0" value="0"  class="form-control" >
-                                            </div>
-                                            <div class="col-md-4" >
-                                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                                <input type="number" min="0" value="0"  class="form-control" >
-                                            </div>
-                                            <div class="col-md-4" >
-                                                <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
-                                                <input type="number" min="0" value="0"  class="form-control" >
-                                            </div>
-                                           
-                                    </div>
-                                </div>
-                            </div>   
-                             
-                            <div id="4" style="display:none;">
-                                <div>
-                                            <input type="hidden" name="action" value="4" />
-                                            <div><label for="type of building">HYBRID</label></div>
-                                            <div class="row">
-                                                    <div class="col-md-4" > 
-                                                        <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
-                                                        <input type="number" min="0" value="0" class="form-control" >
-                                                    </div>
-                                                    <div class="col-md-4" >
-                                                        <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements </label>
-                                                        <input type="number" min="0" value="0" class="form-control" >
-                                                    </div>
-                                                    <div class="col-md-4" >
-                                                        <label for="NumberOfBasements">Number of basements</label>
-                                                        <input type="number" min="0" value="0"  class="form-control" >
-                                                    </div>
-                                                    <div class="col-md-4" >
-                                                        <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                                        <input type="number" min="0" value="0"  class="form-control" >
-                                                    </div>
-                                                    <div class="col-md-4" >
-                                                        <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
-                                                        <input type="number" min="0" value="0"  class="form-control" >
-                                                    </div>
-                                                    <div class="col-md-4" >
-                                                        <label for="NumberOfHoursActivityOf The Building">Number of hours activity of the building</label>
-                                                        <input type="number" min="0" max="24" value="0"  class="form-control" >
-                                                    </div>
-                                                    
-                                            </div>   
-                                        </div>
-                                    </div>
-									<br><br/>
-									<div>
-                                        <label for="productLines" id=productlines >Product Lines</label>
-										
-										<p>Depending on the service chosen, the prices will be different by unit.</p>
+                                
+                        <div id="4" style="display:none;">
+                            <div>
+                                <input type="hidden" name="action" value="4" />
+                           		<label for="type of building">HYBRID</label>
+							</div>      
 
-                                        <input type="radio" value="standard" name="productline" id="p_1" onclick="checkedbutton (1)">Standard. (7 565.00 $)
-										<br>
-                                        <input type="radio" value="premium" name="productline" id="p_2" onclick="checkedbutton (2)">Premium. (12 345.00 $)
-                                        <br>
-                                        <input type="radio" value="excelium" name="productline" id="p_3" onclick="checkedbutton (3)">Excelium. (15 400.00 $)
-										
+                            <div class="col-md-4" > 
+                                <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
+                                <input type="number" min="0" value="0" class="form-control" id="NumberOfDistinctBusinessesH1-input">
+                            </div>
 
-                                    </div>
+                            <div class="col-md-4" >
+                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
+                                <input  type="number" min="0" value="0" class="form-control" id="NumberOfFloorContainedNoBasementsH2-input">
+                            </div>
+
+                            <div class="col-md-4" >
+                                <label for="NumberOfBasements">Number of basements</label>
+                                <input  type="number" min="0" value="0"  class="form-control" id="NumberOfBasementsH3-input">
+                            </div>
+                            <div class="col-md-4" >
+                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
+                                <input  type="number" min="0" value="0"  class="form-control" id="NumberOfParkingSpaceAvailableH4-input">
+                            </div>
+
+                            <div class="col-md-4" >
+                                <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
+                                <input  type="number" min="0" value="0"  class="form-control" id="MaximumNumberOfOccupantsPerFloorH5-input">
+                            </div>
+
+                            <div class="col-md-4" >
+                                <label for="NumberOfHoursActivityOfTheBuilding">Number of hours activity of the building</label>
+                                <input  type="number" min="0" max="24" value="0"  class="form-control" id="NumberOfHoursActivityOfTheBuildingH6-input">
+							</div>
+                        </div>                            
+                        <br><br/>
+							<div class="col-md-4">
+                            	<label for="productLines" id=productlinesprices >Product Lines</label>
+								<p>Depending on the service chosen, the prices will be different by unit.</p>
+
+                                <input type="radio" value="standard" id="ProductLinesPricesStandard-input" onclick="selectASAP(1)" Standard. (7 565.00 $) onclick="selectASAP (1)"Standard. (10%)>
+					
+                                <input type="radio" value="premium"  id="ProductLinesPricesPremium-input" onclick="selectASAP(2)" Premium. (12 345.00 $) onclick="selectASAP (2)"Premium. (13%)>
+                    
+                            	<input type="radio" value="excelium" id="ProductLinesPricesExcelium-input" onclick="selectASAP (3)" Excelium. (15 400.00 $)  onclick="selectASAP (3)" Excelium. (16%)>
+							</div>
 									<br><br/>
-								<div class="col-md-4">
-										<label for="EstimateNumberofCage" id=estimatedcages>Estimated number of cages </label>
-                                        <input type="text" value="0"  class="form-control">
-								</div>
+								
 								<div class="col-md-4">
 										<label for="RequiredNumberofCage" id=Requiredcages>Required number of cages </label>
-                                        <input type="text" value="0" class="form-control">
+                                        <input type="text" value="0" class="form-control" id="RequiredNumberCages-input">
 								</div>
 								<br><br/>
 								<div class="col-md-4" >
-											<label for="unitprice" id="elevatorunitprice">Elevator Unit Price </label>
-											<input type="text"  value="0"  class="form-control" >
+											<label for="unitprice" id="ElevatorUnitPrice">Elevator Unit Price </label>
+											<input type="text"  value="0"  class="form-control" id="ElevatorUnitPrice-input" >
 								</div>	
                                 <br><br/>
-								<div>
-									<label for="installation fees" id=installationfees>Installation Fees</label>
-									<p>Depending on the service chosen, the installation fees will be as follows.</p>
+								<div class="col-md-4">
+											<label for="installation fees" id=installationfees>Installation Fees</label>
+											<p>Depending on the service chosen, the installation fees will be as follows.</p>
 
-									<input type="radio" value="standard" name="installationfees" id="i_1" onclick="checkedbutton (1)">Standard. (10%)
-									<br>
-									<input type="radio" value="premium" name="installationfees"id="i_2"onclick="checkedbutton (2)">Premium. (13%)
-									<br>
-									<input type="radio" value="excelium" name="installationfees" id="i_3" onclick="checkedbutton (3)">Excelium. (16%)
+											<input type="radio" value="standard" id="InstallationFeesStandard-input" onclick="checkedbutton (1)">Standard. (10%)
+											<br>
+											<input type="radio" value="premium" id="InstallationFeesPremium-input"onclick="checkedbutton (2)">Premium. (13%)
+											<br>
+											<input type="radio" value="excelium" id="InstallationFeesExcelium-input" onclick="checkedbutton (3)">Excelium. (16%)
 								</div>
-								<br><br/>
-								<div class="col-md-4" >
-											<label for="totalprice" id="totalprice">Total Price  </label>
-											<input type="text"  value="0"  class="form-control" >
-                                </div>
-                                    <br><br/>
-
-									<div></div>
-                                    
-                                    
+								
+								
+										<!-- RESULTS -->
+										
+										<div class="col-md-4" id="results-amounts" class="row">
+											<div id="elevator-amount">
+												<label for="elevator-amount">N. of Elevators</label>
+												<input type="number" value="" class="form-control" name="elevator-amount" id="elevator-amount-output" readonly="" placeholder="0">
+											</div>
+											
+											
+											<div id="elevators-final">
+												<label for="elevators-final">Total Elevators</label>
+												<input type="number" value="" class="form-control" name="elevators-final" id="elevators-final-output" readonly="" placeholder="0">
+											</div>
+										</div> 
+										<div class="col-md-4" id="results-prices" class="row">
+											<div id="elevator-unit-price">
+												<label for="elevator-unit-price">Elevator Unit Price ($)</label>
+												<input type="text" value="" class="form-control" name="elevator-unit-price" id="elevator-unit-price-output" readonly="" placeholder="$#,###.00">
+											</div>
+											<div id="elevator-total-amount">
+												<label for="elevator-total-amount">Elevator Total Amount ($)</label>
+												<input type="text" value="" class="form-control" name="prices" id="elevator-total-amount-output" readonly="" placeholder="$#,###.00">
+											</div>
+											<div id="installation-fees">
+												<label for="installation-fees">Installation Fees ($)</label>
+												<input type="text" value="" class="form-control" name="prices" id="installation-fees-output" readonly="" placeholder="$#,###.00">
+											</div>
+											<div id="final-price">
+												<label for="final-price">Final Price ($)</label>
+												<input type="text" value="" class="form-control" name="prices" id="final-price-output" readonly="" placeholder="$#,###.00">
+											</div>
+										</div>     
+										   
                                     
                                     </form>
-                                           
+                                      
                                     
                    
                    
@@ -658,6 +682,8 @@
 			<script src="assets/js/scripts.js"></script>
 
             <script src="quotes.js"></script>
+
+			<script src="calcul.js"></script>
 
            
 
