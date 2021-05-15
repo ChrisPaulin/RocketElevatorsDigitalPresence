@@ -27,84 +27,77 @@ function showDiv(select){
         document.getElementById('3').style.display = "none";
         document.getElementById('4').style.display = "none";
         }
-    }
+    };
+  
+function quotecalculate () {
 
-    // Cette fonction est caller avec "onKeyUp" pour ta case "Number of elevator cages to be deployed".
-function potato() {
   console.log("test")
-  // On sauvegarde ce qui est inscrit dans le field dans une valeur
-  var fraise = document.getElementById('NumberOfElevatorCagesC5-input').value;
-  console.log(fraise)
-  // On dit que le field du nombre total d'ascenceurs est égal à notre variable fraise
-  document.getElementById("elevators-final-output").value = fraise; 
-}
-
-
-    function selectASAP () {
-        var percetage;
+        var form_select = document.getElementById("building-type-select");
         var unitePrice;
+        var percentage;
         if (document.getElementById('standard-option').checked) {
           unitePrice = 7565
-          percetage = 0.1
+          percentage = 0.1
         } else if (document.getElementById('premium-option').checked) {
           unitePrice = 12345
-          percetage = 0.13
+          percentage = 0.13
         } else if(document.getElementById('excelium-option').checked) {
           unitePrice = 15400
-          percetage = 0.16
+          percentage = 0.16 
         }
         if (form_select.value==1) {
-          var numOfAppartements = document.getElementById('NumberOfAppartementsR1-input').value;
-          var numOfFloors = document.getElementById('NumberofFloorsR2-input').value;
-          var numOfBasements = document.getElementById('NumberOfBasementsR3-input').value;
-          var appFloorRatio = Math.ceil(numOfAppartements/numOfFloors);
-          var doorForApp = Math.ceil(appFloorRatio/6);
-          var columnFloorRatio = Math.ceil(numOfFloors/20);
-          var noe =  doorForApp * columnFloorRatio;
-          var totalEleCost = noe * unitePrice;
-          var instalFee = totalEleCost * percentage;
-          var total = totalEleCost + instalFee;
+          var numberOfAppartements = document.getElementById('number-of-appartments-r').value;
+          var numberOfFloors = document.getElementById('number-of-floors-r').value;
+          var averageAppPerFloor = Math.ceil(numberOfAppartements/numberOfFloors);
+          var doorForApp = Math.ceil(averageAppPerFloor/6);
+          var columnFloorRatio = Math.ceil(numberOfFloors/20);
+          var numberOfElevatorRequired =  doorForApp * columnFloorRatio;
+          var totalPriceOfElevators = numberOfElevatorRequired * unitePrice;
+          var installationFee = totalPriceOfElevators * percentage;
+          var total = totalPriceOfElevators + installationFee;
         } else if (form_select.value==2){
-          var numOfCages = document.getElementById('NumberOfElevatorCagesC5-input').value;
-          var numOfFloors = document.getElementById('NumberOfFloorContainedNoBasementsC2').value;
-          var numOfBasements = document.getElementById('NumberOfBasementsC3').value;
-          var noe =  numOfCages;
-          var totalEleCost = noe * unitePrice;
-          var instalFee = totalEleCost * percetage;
-          var total = totalEleCost + instalFee;
+          var numberOfElevators = document.getElementById('number-of-elevators').value;
+          var numberOfFloors = document.getElementById('number-of-basements').value;
+          var numberOfBasements = document.getElementById('number-of-companies').value;
+          var numberOfElevatorRequired = numberOfElevators
+          var totalPriceOfElevators = numberOfElevators * unitePrice;
+          var installationFee = totalPriceOfElevators * percentage;
+          var total = totalPriceOfElevators + installationFee;
         } else if (form_select.value==3){
-          var numOfFloors = document.getElementById('NumberOfSeparateTenantCompaniesCOR2-input').value;
-          var numOfBasements = document.getElementById('NumberOfBasementsCOR3-input').value;
-          var numOfMaxOccupants = document.getElementById('MaximumNumberOfOccupantsPerFloorCOR5-input').value;
-          var totalFloor = (Number(numOfFloors) + Number(numOfBasements));
-          var totalOccupants = numOfMaxOccupants * totalFloor;
-          var numOfElevators = totalOccupants/1000;
+          var numberOfFloors = document.getElementById('number-of-floors-cor').value;
+          var numberOfBasements = document.getElementById('numbers-of-basements-cor').value;
+          var numberOfMaxOccupants = document.getElementById('maximum-occupancy-cor').value;
+          var totalFloor = (Number(numberOfFloors) + Number(numberOfBasements));
+          var totalOccupants = numberOfMaxOccupants * totalFloor;
+          var numberOfElevators = totalOccupants/1000;
           var columnFloorRatio = Math.ceil(totalFloor/20);
-          var eleColumnRatio = Math.ceil(numOfElevators / columnFloorRatio);
-          var noe = eleColumnRatio * columnFloorRatio;
-          var totalEleCost = noe * unitePrice;
-          var instalFee = totalEleCost * percetage;
-          var total = totalEleCost + instalFee;
+          var eleColumnRatio = Math.ceil(numberOfElevators / columnFloorRatio);
+          var numberOfElevatorRequired = eleColumnRatio * columnFloorRatio;
+          var totalPriceOfElevators = numberOfElevatorRequired * unitePrice;
+          var installationFee = totalPriceOfElevators * percentage;
+          var total = totalPriceOfElevators + installationFee;
         } else if (form_select.value==4){
-          var numOfFloors = document.getElementById('NumberOfFloorContainedNoBasementsH2-input').value;
-          var numOfBasements = document.getElementById('NumberOfBasementsH3-input').value;
-          var numOfMaxOccupants = document.getElementById('MaximumNumberOfOccupantsPerFloorH5-input').value;
-          var totalFloor = (Number(numOfFloors) + Number(numOfBasements));
-          var totalOccupants = numOfMaxOccupants * totalFloor;
-          var numOfElevators = totalOccupants/1000;
+          var numberOfFloors = document.getElementById('number-of-floors-H').value;
+          var numberOfBasements = document.getElementById('number-of-basements-H').value;
+          var numberOfMaxOccupants = document.getElementById('maximum-occupancy-H').value;
+          var totalFloor = (Number(numberOfFloors) + Number(numberOfBasements));
+          var totalOccupants = numberOfMaxOccupants * totalFloor;
+          var numberOfElevators = totalOccupants/1000;
           var columnFloorRatio = Math.ceil(totalFloor/20);
-          var eleColumnRatio = Math.ceil(numOfElevators / columnFloorRatio);
-          var noe = eleColumnRatio * columnFloorRatio;
-          var totalEleCost = noe * unitePrice;
-          var instalFee = totalEleCost * percetage;
-          var total = totalEleCost + instalFee;
+          var eleColumnRatio = Math.ceil(numberOfElevators / columnFloorRatio);
+          var numberOfElevatorRequired = eleColumnRatio * columnFloorRatio;
+          var totalPriceOfElevators = numberOfElevatorRequired * unitePrice;
+          var installationFee = totalPriceOfElevators * percentage;
+          var total = totalPriceOfElevators + installationFee;
         };
-        var totalEleCost = noe * unitePrice;
-        var instalFee = totalEleCost * percetage;
-        var total = totalEleCost + instalFee;
-        document.getElementById('unitePrice').value = (Number(unitePrice).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
-        document.getElementById('numOfElevators').value = noe;
-        document.getElementById('totalPriceOfElevators').value = (totalEleCost.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
-        document.getElementById('installationFee').value = (instalFee.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
-        document.getElementById('totalFee').value = (total.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")  + ("$"));
+        
+        document.getElementById('elevator-unit-price').value = (Number(unitePrice).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
+        document.getElementById('elevator-amount').value = numberOfElevatorRequired;
+        document.getElementById('elevator-total-price').value = (totalPriceOfElevators.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
+        document.getElementById('installation-fees').value = (installationFee.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ("$"));
+        document.getElementById('final-price').value = (total.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")  + ("$"));
       };
+
+
+
+    

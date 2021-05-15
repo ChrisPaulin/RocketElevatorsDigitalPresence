@@ -177,7 +177,7 @@
             <!-- QUOTES FORM SUBMISSION -->
 
             
-            <section id="submission">
+            <section id="quote">
 				<div class="container">
 
 					<header class="text-center mb-60">
@@ -191,7 +191,7 @@
                 
             <div class="col-md-4">
                 <label for="building-type-select">BUILDING TYPE </label>
-                <select id="building-type-select" class="form-select"  onchange="showDiv(this)" >
+                <select id="building-type-select" class="form-control"  onchange="showDiv(this)" >
                     <option value="">-- Select --</option>
                     <option value="1">RESIDENTIAL</option>
                     <option value="2">COMMERCIAL</option>
@@ -202,7 +202,7 @@
 
                         
             
-                    
+            
             
                 
 						<div id="1" style="display:none;">
@@ -212,81 +212,82 @@
 							</div>
 
 							<div> 
-								<label for="NumberOfAppartements">Number of appartements</label>
-								<input required onkeyup="selectASAP()" onchange="selectASAP()" type="number" min="0" value="0" class="form-control" id='NumberOfAppartementsR1-input' >
+								<label for="residential">Number of appartements*</label>
+								<input class=form-control  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id='number-of-appartments-r' >
                             </div>
 
                             <div>
-                                <label for="NumberofFloors">Number of floors</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberofFloorsR2-input" >
+                                <label for="residential">Number of floors*</label>
+                                <input class=form-control  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-floors-r" >
                             </div>
 
                         	<div>
-								<label for="NumberOfBasements">Number of basements</label>
-								<input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0"  class="form-control" id="NumberOfBasementsR3-input" >
+								<label for="residential">Number of basements*</label>
+								<input class=form-control  onkeyup="quotecalculate()" type="number" min="0" value="0"  class="form-control" id="number-of-basements-r" >
                             </div>
 						</div>
+					
 						
     					<div id="2" style="display:none;">
                     		<div>
                             	<input type="hidden" name="action" value="2" />
-                            	<labelrequired onkeyup="selectASAP()" onchange="selectASAP()"  for="type of building">COMMERCIAL</label>
+                            	<label for="type of building">COMMERCIAL</label>
                             </div>
 
                             <div class="col-md-4"> 
-                                <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfDistinctBusinessesC1-input">
+                                <label for="commercial">Number of floors*</label>
+                                <input  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-floors">
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfFloorContainedNoBasementsC2-input">
+                                <label for="commercial">Numbers of basements*</label>
+                                <input  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-basements">
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfBasements">Number of basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfBasementsC3-input" >
+                                <label for="commercial">Number of companies*</label>
+                                <input  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-companies" >
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"   type="number" min="0" value="0" class="form-control" id="NumberOfParkingSpaceAvailableC4-input" >
+                                <label for="commercial">Number of parking spots*</label>
+                                <input  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-parking-spots" >
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfElevatorCages">Number of elevator cages to be deployed</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfElevatorCagesC5-input">
+                                <label for="commercial">Number of elevator cages to be deployed*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-elevators">
                             </div>
 						</div>
                     
                			<div id="3" style="display:none;">
                          	<div>      
                             	<input type="hidden" name="action" value="3" />
-                                <label required onkeyup="selectASAP()" onchange="selectASAP()" for="type of building">CORPORATE</label>
+                                <label for="type of building">CORPORATE</label>
                             </div>        
                                 
 							<div class="col-md-4"> 
-                                <label for="NumberOfSeparateTenantCompanies">Number of separate tenant companies</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"   type="number" min="0" value="0" class="form-control" id="NumberOfSeparateTenantCompaniesCOR1-input">
+                                <label for="corporate">Number of floors*</label>
+                                <input  onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-floors-cor">
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfSeparateTenantCompaniesCOR2-input" >
+                                <label for="corporate">Numbers of basements*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="numbers-of-basements-cor" >
                             </div>
 
                             <div class="col-md-4">
-                                <label for="NumberOfBasements">Number of basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfBasementsCOR3-input" >
+                                <label for="corporate">Number of parking spots*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-parking-spots-cor" >
                             </div>
 
                             <div class="col-md-4" >
-                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfParkingSpaceAvailableCOR4-input">
+                                <label for="corporate">Number of separate tenant companies*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-corporations-cor">
                             </div>
                             <div class="col-md-4" >
-                                <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="MaximumNumberOfOccupantsPerFloorCOR5-input">
+                                <label for="corporate Occupancy">Maximum number of occupants per floor*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="maximum-occupancy-cor">
                             </div>
                         </div>
                                 
@@ -297,62 +298,64 @@
 							</div>      
 
                             <div class="col-md-4" > 
-                                <label for="NumberOfDistinctBusinesses">Number of distinct businesses</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfDistinctBusinessesH1-input">
+                                <label for="Hybrid">Number of floors*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-floors-H">
                             </div>
 
                             <div class="col-md-4" >
-                                <label for="NumberOfFloorContainedNoBasements">Numbers of floors contained no basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0" class="form-control" id="NumberOfFloorContainedNoBasementsH2-input">
+                                <label for="Hybrid">Numbers of basements*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0" class="form-control" id="number-of-basements-H">
                             </div>
 
                             <div class="col-md-4" >
-                                <label for="NumberOfBasements">Number of basements</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0"  class="form-control" id="NumberOfBasementsH3-input">
+                                <label for="Hybrid">Number of companies*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0"  class="form-control" id="number-of-companies-H">
                             </div>
                             <div class="col-md-4" >
-                                <label for="NumberOfParkingSpaceAvailable">Number of parking space available</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0"  class="form-control" id="NumberOfParkingSpaceAvailableH4-input">
-                            </div>
-
-                            <div class="col-md-4" >
-                                <label for="MaximumNumberOfOccupantsPerFloor">Maximum number of occupants per floor</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" value="0"  class="form-control" id="MaximumNumberOfOccupantsPerFloorH5-input">
+                                <label for="Hybrid">Number of parking spots*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0"  class="form-control" id="number-of-parking-spots-H">
                             </div>
 
                             <div class="col-md-4" >
-                                <label for="NumberOfHoursActivityOfTheBuilding">Number of hours activity of the building</label>
-                                <input required onkeyup="selectASAP()" onchange="selectASAP()"  type="number" min="0" max="24" value="0"  class="form-control" id="NumberOfHoursActivityOfTheBuildingH6-input">
+                                <label for="Hybrid">Maximum Occupancy*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="0" value="0"  class="form-control" id="maximum-occupancy-H">
+                            </div>
+
+                            <div class="col-md-4" >
+                                <label for="Hybrid">Business Hours*</label>
+                                <input onkeyup="quotecalculate()" type="number" min="1" max="24" value="0"  class="form-control" id="business-hours">
 							</div>
                         </div>                            
-                        <br><br/>
+                        
 						<div id="radiobuttons" class="container" name="buttons">
 
-							<label>Select the type of sevice in your interest</label>
+							<label>Select the type of service in your interest</label>
 							<ul>
 								<li>
-									<input type="radio" id="standard-option" name="material" value="standard" onclick="selectASAP()" onchange="selectASAP(this)">
 									<label for="standard-option">Standard</label>
-							
-									<div class="check"></div>
+									<input type="radio" id="standard-option" name="material" value="standard" onclick="quotecalculate(this)" onchange="quotecalculate(this)">
+									
+									<div class="check">
+									<div class="inside"></div>
 								</li>
 							
 								<li>
-									<input type="radio" id="premium-option" name="material" value="premium" onclick="selectASAP()" onchange="selectASAP (this)" >
 									<label for="premium-option">Premium</label>
-							
+									<input type="radio" id="premium-option" name="material" value="premium" onclick="quotecalculate()" onchange="quotecalculate (this)" >
+									
 									<div class="check">
 									<div class="inside"></div>
-									</div>
+									
 								</li>
 							
 								<li>
-									<input type="radio" id="excelium-option" name="material" value="excelium" onclick="selectASAP()" onchange="selectASAP(this)">
 									<label for="excelium-option">Excelium</label>
+									<input type="radio" id="excelium-option" name="material" value="excelium" onclick="quotecalculate()" onchange="quotecalculate(this)">
+									
 							
 									<div class="check">
 									<div class="inside"></div>
-									</div>
+									
 								</li>
 							</ul>
 						</div>	
@@ -361,38 +364,38 @@
 						<!-- RESULTS -->
 									<div>
 										<div class="col-md-4 " id="out1">
-											<label>Unite price</label>
-											<input type="text" value="" class="form-control" name="unite price" 
-											id="unitePrice" onchange="selectASAP(this.value)" readonly>
+											<label>Elevator Amount</label>
+											<input type="text" value="" class="form-control" name="elevator-amount" 
+											id="elevator-amount" onkeyup="quotecalculate(this.value)" readonly>
 										</div>
 				
 										<div class="col-md-4" id="out2">
-											<label>Number of elevators</label>
-											<input type="text" value="" class="form-control" name="Number of elevators" 
-											id="numOfElevators" onchange="selectASAP(this.value)" readonly>
+											<label>Elevator Unit Price</label>
+											<input type="text" value="" class="form-control" name="elevator-unit-price" 
+											id="elevator-unit-price" onkeyup="quotecalculate(this.value)" readonly>
 										</div>
 				
 										<div class="col-md-4" id="out3">
-											<label>Total price of elevators</label>
-											<input type="text" value="" class="form-control" name="Price of elevators"
-											id="totalPriceOfElevators" onchange="selectASAP(this.value)" readonly>
+											<label>Elevator Total Price</label>
+											<input type="text" value="" class="form-control" name="elevator-total-price"
+											id="elevator-total-price" onkeyup="quotecalculate(this.value)" readonly>
 										</div>
 				
 										<div class="col-md-4" id="out4">
-											<label >Installation fee</label>
-											<input type="text" value="" class="form-control" name="Installation fee"
-											id="installationFee" onchange="selectASAP(this.value)" readonly>
+											<label >Installation fees</label>
+											<input type="text" value="" class="form-control" name="Installation-fees"
+											id="installation-fees" onkeyup="quotecalculate(this.value)" readonly>
 										</div>
 				
-										<div class="col-md-4" id="out4">
-											<label>Total</label>
-											<input type="text" value="" class="form-control"  name="Total"
-											id="totalFee" onchange="selectASAP(this.value)" readonly>
+										<div class="col-md-4" id="out5">
+											<label>Final Price</label>
+											<input type="text" value="" class="form-control"  name="final-price"
+											id="final-price" onkeyup="quotecalculate(this.value)" readonly>
 										</div>
 										
 									</div>	   
 										   
-                                    
+								          
                                     
                                       
                                     
@@ -682,7 +685,7 @@
 
             <script src="quotes.js"></script>
 
-			<script src="Calculfunction.js"></script>
+			
 
 			
 
